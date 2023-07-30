@@ -1,1 +1,39 @@
-hello worl!
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Koşul</title>
+</head>
+<body>
+<div align="center">
+<h2>Sayı Hesapla</h2>
+<form method="POST" action="">
+<br><br>
+<input type="text" name="a" placeholder="1 .sayıyı giriniz." size="25" /><br><br>
+<input type="text" name="b"placeholder="2 .sayıyı giriniz." size="25" /><br><br>
+<button type="submit">Hesapla</button>
+</form>
+</div>
+<?php
+if ($_POST)
+ {
+   $aa=$_POST["a"];
+   $bb=$_POST["b"];
+
+    if ($aa<$bb)
+   {
+      echo "a, b den küçüktür.";
+   }
+   elseif ($aa==$bb)
+   {
+       echo "a, b ye eşittir.";
+   }
+else
+{
+    echo "a, b den büyüktür";
+}
+
+}
+
+?>
+</body>
+</html>
