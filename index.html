@@ -1,8 +1,14 @@
+
+<!DOCTYPE html>
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
   },
 });
+
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
@@ -11,8 +17,8 @@ function App() {
     </ThemeProvider>
   );
 }
+
 export default App;
-<!DOCTYPE html>
 <html>
 <head>
     <title>Buket'in Dersi</title>
