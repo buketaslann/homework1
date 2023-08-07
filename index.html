@@ -1,3 +1,25 @@
+import * as React from 'react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { lime, purple } from '@mui/material/colors';
+import Button from '@mui/material/Button';
+
+const theme = createTheme({
+  palette: {
+    primary: lime,
+    secondary: purple,
+  },
+});
+
+export default function UsingColorObject() {
+  return (
+    <ThemeProvider theme={theme}>
+      <Button variant="contained">Primary</Button>
+      <Button variant="contained" color="secondary" sx={{ ml: 2 }}>
+        Secondary
+      </Button>
+    </ThemeProvider>
+  );
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,22 +55,3 @@ else
 }
 
 }
-        <Menu/>
-                <div className="content-wrapper fs13">
-                    <section className="content-header">
-                        <div className="container-fluid">
-                            <div className="row mb-2">
-                                <div className='col-12 d-flex'>
-                                    <h1>Numune Planlama</h1>
-                                </div>
-                                <div className="col-md-4 col-sm-4">
-                                    <div className="d-flex justify-content-start align-items-center">
-                                        <h5 className="mr-2 my-3 text-nowrap ">Açık Sipariş : { gonderilmisNumuneData.gonderilmis_siparis.fark}</h5>
-                                        <h5 className={`mr-2 my-3 text-nowrap `}> |  Plansız : {(isYuku.plansiz)}</h5>
-                                        <h5 className={`mr-2 my-3 text-nowrap ${isYuku?.plandan_cikarilmasi_gereken == 0 ? 'text-black' : 'text-danger'} `}> |  Plandan Çıkartılması Gereken : {isYuku?.plandan_cikarilmasi_gereken}</h5>
-                                        <h5 className="mr-2  my-3 text-nowrap "> |  Gün Planı : {isYuku?.gun_plani}</h5>
-
-
-                     
-
-                                    </div>
