@@ -1,56 +1,46 @@
-const [guncelleItem, setGuncelleItem] = useState<SiparisPlanlamaNewAltData >(initialGuncelleItem)
-    const initialFiltre = {
-        siparis: '',
-        batch: '',
-        nihaibekliyor: '',
-        baslangic_tarihi_js: '',
-        baslangic_tarih: "",
-        bitis_tarihi_js: '',
-        bitis_tarih: "",
-        siparis_kalem :"",
-        musteri :"",
-        tesis : "",
-        satis_bloke : "",
-        takip_no : "",
-        takip_no_tarih : "",
-        sehir : "",
-        rota : "",
-        guncel_lojistik : "",
-        hazir : "",
-        nihai2 : "",
-        statu : "",
-        iptal:"",
-        tur : "",
-        p : "",
-        nihai_js : '',
-        nihai : "",
-        secim_js : '',
-        secim : "",
-        atama : "",
-        arsiv : "",
-        pazaryeri : "",
-        fullfill : "",
-        tdp : "",
-        fis : "",
-        tp_talep : "",
-        kalan_baslangic : '',
-        kalan_bitis : '',
-        tp_tarih : "",
-        guncelle: "",
-        numune: "",
-        bekleme: "",
-        urun_grubu:"",
-        ht: "",
-        nihaibekliyorfiltre: "",
-        tesis_kodu: "",
-        uyari: ""
-        //masterdata: ""
-    }
+</div>
+                                    <div className="col-12">
+                                        {
+                                            tableLoad ?
+                                                <div style={{position:'absolute',maxWidth: '100%', height:'auto', top:'40%',left:'40%', zIndex:3}} >
+                                                    <BallTriangle
+                                                        height="100"
+                                                        width="100"
+                                                        color="green"
+                                                        ariaLabel="loading"/>
+                                                </div>
+                                                : ''
+                                        }
 
+                                        {/* Liste Başla  */}
+                                        <div className="card " style={{ opacity: opacity }}>
 
+                                            <div className={`card-body p-0  big-scrollbar position-relative    ${isMobile ? "overflow-auto" : " "}`} style={{ overflowX: "scroll", maxHeight: "65vh" }}    >
 
-
-<th className="text-center text-nowrap border-r-solid" colSpan={toggleSections['parcali_teslim'] ? 2 : 1} style={{ background: 'lightgray',  }}>
+                                                <table className="table table-bordered table-striped border-2 border-secondary headerAnchor">
+                                                    <thead className={`${stickyTopBool ? "sticky-top bg-white" : ""}`}>
+                                                        <tr  >
+                                                            <th colSpan={8}></th>
+                                                            <th className="text-center text-nowrap text-danger border-l-solid border-r-solid" colSpan={toggleSections['planlama'] ? 6 : 1} style={{ background: 'white',  }}>
+                                                                <div className="d-flex justify-content-center">
+                                                                    {toggleSections['planlama'] ? 'Planlama' : 'Planlama' + '\xa0\xa0'}
+                                                                    <SwitchButton
+                                                                        onChange={() => setToggleSections({ ...toggleSections, planlama: !toggleSections.planlama })}
+                                                                        checked={toggleSections['planlama']}
+                                                                    />
+                                                                </div>
+                                                            </th>
+                                                            <th colSpan={16} className="border-r-solid"></th>
+                                                            {/*<th className="text-center text-nowrap" colSpan={toggleSections['ht'] ? 2 : 1} style={{ background: 'lightgray',  }}>*/}
+                                                            {/*    <div className="d-flex justify-content-center">*/}
+                                                            {/*        {toggleSections['ht'] ? 'Hızlı Teslimat' : 'HT' + '\xa0\xa0'}*/}
+                                                            {/*        <SwitchButton*/}
+                                                            {/*            onChange={() => setToggleSections({ ...toggleSections, ht: !toggleSections.ht })}*/}
+                                                            {/*            checked={toggleSections['ht']}*/}
+                                                            {/*        />*/}
+                                                            {/*    </div>*/}
+                                                            {/*</th>*/}
+                                                            <th className="text-center text-nowrap border-r-solid" colSpan={toggleSections['parcali_teslim'] ? 2 : 1} style={{ background: 'lightgray',  }}>
                                                                 <div className="d-flex justify-content-center">
                                                                     {toggleSections['parcali_teslim'] ? 'Parçalı Teslim' : 'PT' + '\xa0\xa0'}
                                                                     <SwitchButton
@@ -59,61 +49,12 @@ const [guncelleItem, setGuncelleItem] = useState<SiparisPlanlamaNewAltData >(ini
                                                                     />
                                                                 </div>
                                                             </th>
-
-
-
-
-<div className="col-md-2">
-                                                                        <div className="form-group">
-                                                                            <label>PT (Sepet)</label>
-                                                                            <input
-                                                                                type="number"
-                                                                                min={1}
-                                                                                className="form-control p-1 fs13"
-                                                                                onChange={(e) => setGuncelleItem({ ...guncelleItem, parcali_teslim_sepet: e.target.value })}
-                                                                                value={guncelleItem.parcali_teslim_sepet}
-                                                                                name="parcali_teslim_sepet"
-                                                                            />
-                                                                        </div>
-                                                                    </div>
-
-
-
-{
-                                                                toggleSections['parcali_teslim'] ?
-                                                                    <Fragment>
-                                                                        <th className="text-center text-nowrap" style={{background: 'var(--silik-mavi)'}}>Sepet #</th>
-                                                                        <th className="text-center text-nowrap border-r-solid">PT (S)</th>
-                                                                    </Fragment>
-                                                                    : <th className="text-center text-nowrap border-r-solid"></th>
-                                                            }
-{toggleSections['parcali_teslim'] ?
-                                                                    <Fragment>
-                                                                        <td className={`anchor text-center align-middle text-nowrap td-like-btn ${stylePTSepet(item.parcali_teslim_sepet)}`} onDoubleClick={() => setCellDataToUpdate({ parcali_teslim_sepet: item.parcali_teslim_sepet, id_parcali_teslim_sepet: item.id })}>
-                                                                            {
-                                                                                cellDataToUpdate['id_parcali_teslim_sepet'] == item.id ?
-                                                                                    <div className="p-0 m-0 d-flex align-items-center">
-                                                                                        <input
-                                                                                            type="number"
-                                                                                            min={1}
-                                                                                            className="form-control p-1 fs13 w25"
-                                                                                            onChange={(e) => setCellDataToUpdate({...cellDataToUpdate, parcali_teslim_sepet: e.target.value })}
-                                                                                            // @ts-ignore
-                                                                                            value={cellDataToUpdate['parcali_teslim_sepet']}
-                                                                                            // value={item.parcali_teslim_sepet}
-                                                                                            disabled={btnAction['is_cell_ekle']}
-                                                                                        />
-
-                                                                                        <div className="ml-2 d-flex flex-column" style={{ rowGap: '8px' }}>
-                                                                                            <button className="h-50 badge border border-danger text-danger font-weight-normal fs12 anchor" onClick={() => setCellDataToUpdate({ id_parcali_teslim_sepet: 0 })}> X </button>
-                                                                                            {/* @ts-ignore */}
-                                                                                            <button className="h-50 badge border border-success text-success font-weight-normal fs12 anchor" onClick={()=>parcaliTeslimSepetGuncelle(cellDataToUpdate['parcali_teslim_sepet'],item.siparis)} disabled={btnAction['is_cell_ekle']}> V </button>
-                                                                                        </div>
-                                                                                    </div> :
-                                                                                    item.parcali_teslim_sepet
-                                                                            }
-                                                                        </td>
-                                                                        <td className="anchor text-center align-middle text-nowrap border-r-solid">{item.parcali_teslim_siparis}</td>
-                                                                    </Fragment>
-                                                                    : <th className="text-center text-nowrap border-r-solid"></th>
-                                                                }
+                                                            <th className="text-center text-nowrap border-r-solid" colSpan={toggleSections['termin'] ? 3 : 1} style={{ background: 'lightgray',  }}>
+                                                                <div className="d-flex justify-content-center">
+                                                                    {toggleSections['termin'] ? 'Termin' : 'Ter.' + '\xa0\xa0'}
+                                                                    <SwitchButton
+                                                                        onChange={() => setToggleSections({ ...toggleSections, termin: !toggleSections.termin })}
+                                                                        checked={toggleSections['termin']}
+                                                                    />
+                                                                </div>
+                                                            </th>
