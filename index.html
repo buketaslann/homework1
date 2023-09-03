@@ -31,7 +31,14 @@ else
 {
     echo "a, b den büyüktür";
 }
-
+{
+                                                                toggleSections['parcali_teslim'] ?
+                                                                    <Fragment>
+                                                                        <th className="text-center text-nowrap" style={{background: 'var(--silik-mavi)'}}>Sepet #</th>
+                                                                        <th className="text-center text-nowrap border-r-solid">PT (S)</th>
+                                                                    </Fragment>
+                                                                    : <th className="text-center text-nowrap border-r-solid"></th>
+                                                            }
 }
 
 ?>
