@@ -35,3 +35,33 @@
                                                                     </Fragment>
                                                                     : <th className="text-center text-nowrap border-r-solid"></th>
                                                             }
+{toggleSections['parcali_teslim'] ?
+                                                                    <Fragment>
+                                                                        <td className={`anchor text-center align-middle text-nowrap td-like-btn ${stylePTSepet(item.parcali_teslim_sepet)}`} onDoubleClick={() => setCellDataToUpdate({ parcali_teslim_sepet: item.parcali_teslim_sepet, id_parcali_teslim_sepet: item.id })}>
+                                                                            {
+                                                                                cellDataToUpdate['id_parcali_teslim_sepet'] == item.id ?
+                                                                                    <div className="p-0 m-0 d-flex align-items-center">
+                                                                                        <input
+                                                                                            type="number"
+                                                                                            min={1}
+                                                                                            className="form-control p-1 fs13 w25"
+                                                                                            onChange={(e) => setCellDataToUpdate({...cellDataToUpdate, parcali_teslim_sepet: e.target.value })}
+                                                                                            // @ts-ignore
+                                                                                            value={cellDataToUpdate['parcali_teslim_sepet']}
+                                                                                            // value={item.parcali_teslim_sepet}
+                                                                                            disabled={btnAction['is_cell_ekle']}
+                                                                                        />
+
+                                                                                        <div className="ml-2 d-flex flex-column" style={{ rowGap: '8px' }}>
+                                                                                            <button className="h-50 badge border border-danger text-danger font-weight-normal fs12 anchor" onClick={() => setCellDataToUpdate({ id_parcali_teslim_sepet: 0 })}> X </button>
+                                                                                            {/* @ts-ignore */}
+                                                                                            <button className="h-50 badge border border-success text-success font-weight-normal fs12 anchor" onClick={()=>parcaliTeslimSepetGuncelle(cellDataToUpdate['parcali_teslim_sepet'],item.siparis)} disabled={btnAction['is_cell_ekle']}> V </button>
+                                                                                        </div>
+                                                                                    </div> :
+                                                                                    item.parcali_teslim_sepet
+                                                                            }
+                                                                        </td>
+                                                                        <td className="anchor text-center align-middle text-nowrap border-r-solid">{item.parcali_teslim_siparis}</td>
+                                                                    </Fragment>
+                                                                    : <th className="text-center text-nowrap border-r-solid"></th>
+                                                                }
