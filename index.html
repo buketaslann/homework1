@@ -1,3 +1,16 @@
+ <th className="text-center text-nowrap border-r-solid" colSpan={toggleSections['parcali_teslim'] ? 2 : 1} style={{ background: 'lightgray',  }}>
+                                                                <div className="d-flex justify-content-center">
+                                                                    {toggleSections['parcali_teslim'] ? 'Parçalı Teslim' : 'PT' + '\xa0\xa0'}
+                                                                    <SwitchButton
+                                                                        onChange={() => setToggleSections({ ...toggleSections, parcali_teslim: !toggleSections.parcali_teslim })}
+                                                                        checked={toggleSections['parcali_teslim']}
+                                                                    />
+                                                                </div>
+                                                            </th>
+
+
+
+
 <div className="col-md-2">
                                                                         <div className="form-group">
                                                                             <label>PT (Sepet)</label>
