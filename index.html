@@ -1,36 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Koşul</title>
-</head>
-<body>
-<div align="center">
-<h2>Sayı Hesapla</h2>
-<form method="POST" action="">
-<br><br>
-<input type="text" name="a" placeholder="1 .sayıyı giriniz." size="25" /><br><br>
-<input type="text" name="b"placeholder="2 .sayıyı giriniz." size="25" /><br><br>
-<button type="submit">Hesapla</button>
-</form>
-</div>
-<?php
-if ($_POST);
- {
-   $aa=$_POST["a"];
-   $bb=$_POST["b"];
+<div className="col-md-2">
+                                                                        <div className="form-group">
+                                                                            <label>PT (Sepet)</label>
+                                                                            <input
+                                                                                type="number"
+                                                                                min={1}
+                                                                                className="form-control p-1 fs13"
+                                                                                onChange={(e) => setGuncelleItem({ ...guncelleItem, parcali_teslim_sepet: e.target.value })}
+                                                                                value={guncelleItem.parcali_teslim_sepet}
+                                                                                name="parcali_teslim_sepet"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
 
-    if ($aa<$bb)
-   {
-      echo "a, b den küçüktür.";
-   }
-   elseif ($aa==$bb)
-   {
-       echo "a, b ye eşittir.";
-   }
-else
-{
-    echo "a, b den büyüktür";
-}
+
+
 {
                                                                 toggleSections['parcali_teslim'] ?
                                                                     <Fragment>
@@ -39,8 +22,3 @@ else
                                                                     </Fragment>
                                                                     : <th className="text-center text-nowrap border-r-solid"></th>
                                                             }
-}
-
-?>
-</body>
-</html>
