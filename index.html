@@ -1,4 +1,56 @@
- <th className="text-center text-nowrap border-r-solid" colSpan={toggleSections['parcali_teslim'] ? 2 : 1} style={{ background: 'lightgray',  }}>
+const [guncelleItem, setGuncelleItem] = useState<SiparisPlanlamaNewAltData >(initialGuncelleItem)
+    const initialFiltre = {
+        siparis: '',
+        batch: '',
+        nihaibekliyor: '',
+        baslangic_tarihi_js: '',
+        baslangic_tarih: "",
+        bitis_tarihi_js: '',
+        bitis_tarih: "",
+        siparis_kalem :"",
+        musteri :"",
+        tesis : "",
+        satis_bloke : "",
+        takip_no : "",
+        takip_no_tarih : "",
+        sehir : "",
+        rota : "",
+        guncel_lojistik : "",
+        hazir : "",
+        nihai2 : "",
+        statu : "",
+        iptal:"",
+        tur : "",
+        p : "",
+        nihai_js : '',
+        nihai : "",
+        secim_js : '',
+        secim : "",
+        atama : "",
+        arsiv : "",
+        pazaryeri : "",
+        fullfill : "",
+        tdp : "",
+        fis : "",
+        tp_talep : "",
+        kalan_baslangic : '',
+        kalan_bitis : '',
+        tp_tarih : "",
+        guncelle: "",
+        numune: "",
+        bekleme: "",
+        urun_grubu:"",
+        ht: "",
+        nihaibekliyorfiltre: "",
+        tesis_kodu: "",
+        uyari: ""
+        //masterdata: ""
+    }
+
+
+
+
+<th className="text-center text-nowrap border-r-solid" colSpan={toggleSections['parcali_teslim'] ? 2 : 1} style={{ background: 'lightgray',  }}>
                                                                 <div className="d-flex justify-content-center">
                                                                     {toggleSections['parcali_teslim'] ? 'Parçalı Teslim' : 'PT' + '\xa0\xa0'}
                                                                     <SwitchButton
