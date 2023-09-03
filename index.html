@@ -1,60 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Koşul</title>
+</head>
+<body>
+<div align="center">
+<h2>Sayı Hesapla</h2>
+<form method="POST" action="">
+<br><br>
+<input type="text" name="a" placeholder="1 .sayıyı giriniz." size="25" /><br><br>
+<input type="text" name="b"placeholder="2 .sayıyı giriniz." size="25" /><br><br>
+<button type="submit">Hesapla</button>
+</form>
 </div>
-                                    <div className="col-12">
-                                        {
-                                            tableLoad ?
-                                                <div style={{position:'absolute',maxWidth: '100%', height:'auto', top:'40%',left:'40%', zIndex:3}} >
-                                                    <BallTriangle
-                                                        height="100"
-                                                        width="100"
-                                                        color="green"
-                                                        ariaLabel="loading"/>
-                                                </div>
-                                                : ''
-                                        }
+<?php
+if ($_POST);
+ {
+   $aa=$_POST["a"];
+   $bb=$_POST["b"];
 
-                                        {/* Liste Başla  */}
-                                        <div className="card " style={{ opacity: opacity }}>
+    if ($aa<$bb)
+   {
+      echo "a, b den küçüktür.";
+   }
+   elseif ($aa==$bb)
+   {
+       echo "a, b ye eşittir.";
+   }
+else
+{
+    echo "a, b den büyüktür";
+}
 
-                                            <div className={`card-body p-0  big-scrollbar position-relative    ${isMobile ? "overflow-auto" : " "}`} style={{ overflowX: "scroll", maxHeight: "65vh" }}    >
+}
 
-                                                <table className="table table-bordered table-striped border-2 border-secondary headerAnchor">
-                                                    <thead className={`${stickyTopBool ? "sticky-top bg-white" : ""}`}>
-                                                        <tr  >
-                                                            <th colSpan={8}></th>
-                                                            <th className="text-center text-nowrap text-danger border-l-solid border-r-solid" colSpan={toggleSections['planlama'] ? 6 : 1} style={{ background: 'white',  }}>
-                                                                <div className="d-flex justify-content-center">
-                                                                    {toggleSections['planlama'] ? 'Planlama' : 'Planlama' + '\xa0\xa0'}
-                                                                    <SwitchButton
-                                                                        onChange={() => setToggleSections({ ...toggleSections, planlama: !toggleSections.planlama })}
-                                                                        checked={toggleSections['planlama']}
-                                                                    />
-                                                                </div>
-                                                            </th>
-                                                            <th colSpan={16} className="border-r-solid"></th>
-                                                            {/*<th className="text-center text-nowrap" colSpan={toggleSections['ht'] ? 2 : 1} style={{ background: 'lightgray',  }}>*/}
-                                                            {/*    <div className="d-flex justify-content-center">*/}
-                                                            {/*        {toggleSections['ht'] ? 'Hızlı Teslimat' : 'HT' + '\xa0\xa0'}*/}
-                                                            {/*        <SwitchButton*/}
-                                                            {/*            onChange={() => setToggleSections({ ...toggleSections, ht: !toggleSections.ht })}*/}
-                                                            {/*            checked={toggleSections['ht']}*/}
-                                                            {/*        />*/}
-                                                            {/*    </div>*/}
-                                                            {/*</th>*/}
-                                                            <th className="text-center text-nowrap border-r-solid" colSpan={toggleSections['parcali_teslim'] ? 2 : 1} style={{ background: 'lightgray',  }}>
-                                                                <div className="d-flex justify-content-center">
-                                                                    {toggleSections['parcali_teslim'] ? 'Parçalı Teslim' : 'PT' + '\xa0\xa0'}
-                                                                    <SwitchButton
-                                                                        onChange={() => setToggleSections({ ...toggleSections, parcali_teslim: !toggleSections.parcali_teslim })}
-                                                                        checked={toggleSections['parcali_teslim']}
-                                                                    />
-                                                                </div>
-                                                            </th>
-                                                            <th className="text-center text-nowrap border-r-solid" colSpan={toggleSections['termin'] ? 3 : 1} style={{ background: 'lightgray',  }}>
-                                                                <div className="d-flex justify-content-center">
-                                                                    {toggleSections['termin'] ? 'Termin' : 'Ter.' + '\xa0\xa0'}
-                                                                    <SwitchButton
-                                                                        onChange={() => setToggleSections({ ...toggleSections, termin: !toggleSections.termin })}
-                                                                        checked={toggleSections['termin']}
-                                                                    />
-                                                                </div>
-                                                            </th>
+?>
+</body>
+</html>
